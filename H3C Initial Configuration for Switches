@@ -1,0 +1,43 @@
+##H3C CONFIGURATION (NAME ASSIGNMENT)
+
+sys
+sysname DA-SW-1
+quit
+
+##VLAN ASSIGNMENT
+vlan 100
+name DATA
+quit
+vlan 101
+name SERVER
+quit
+vlan 102
+name VOICE
+quit
+vlan 103
+name MGMT
+quit
+
+##VLAN IP ADDRESSING
+int vlan 100
+ip address 172.18.0.1 22
+quit
+int vlan 101
+ip address 172.18.4.1 24
+quit
+int vlan 102
+ip address 172.18.5.1 24
+quit
+int vlan 103
+ip address 172.18.6.1 24
+quit
+
+##VLAN PORT ASSIGNMENT
+interface Ten-GigabitEthernet1/0/53
+port link-type trunk
+quit
+
+interface Ten-GigabitEthernet1/0/54
+port link-type trunk
+quit
+
