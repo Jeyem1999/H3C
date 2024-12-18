@@ -1,3 +1,4 @@
+
 ##H3C CONFIGURATION (NAME ASSIGNMENT)
 
 sys
@@ -40,4 +41,34 @@ quit
 interface Ten-GigabitEthernet1/0/54
 port link-type trunk
 quit
+
+##how to remove trunk
+interface Ten-GigabitEthernet1/0/54
+no port link-type 
+quit
+
+interface Ten-GigabitEthernet1/0/53
+no port link-type 
+quit
+
+
+
+###Link Aggregate
+
+
+
+int bridge-aggregation 40
+quit
+int range xge1/0/53 to xge1/0/54
+port link-aggregation group 40
+
+****wait to load 
+
+int bridge-aggregation40
+port link-type trunk
+*** wait to load
+
+###for testing if gumagana ang bridg-aggregation
+link-aggregation mode dynamic 
+dis link-aggregation summary 
 
