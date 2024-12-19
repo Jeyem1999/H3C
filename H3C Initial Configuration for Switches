@@ -83,4 +83,15 @@ port trunk pvid vlan 100
 port trunk permit vlan 102
 di this
 
+##assign port access as mgmt
+
+int (interface assigned)
+port link-type access
+port access vlan x (mgmt vlan id)
+quit
+
+##relay command (Core Switch)
+
+
+
 
