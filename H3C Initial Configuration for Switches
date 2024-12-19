@@ -72,3 +72,15 @@ port link-type trunk
 link-aggregation mode dynamic 
 dis link-aggregation summary 
 
+
+##Configure DATA and VOICE trunk for each ports
+
+interface range gi1/0/1 to gi1/0/47
+port lin
+port link-ty
+port link-type trunk
+port trunk pvid vlan 100
+port trunk permit vlan 102
+di this
+
+
